@@ -18,21 +18,49 @@ import {
   IndianRupee,
   Share2,
   PieChart,
-  Focus
+  Focus,
+  Sparkles
 } from 'lucide-react';
 
 const DeliverableOne = () => {
-  const slides = [
-    { num: "01", title: "The High-End Minimalist Evolution", desc: "Redefining Chikitsaa from a prominent local facility to Mumbai's premier destination for Aesthetic Mastery." },
-    { num: "02", title: "The Heritage Gap", desc: "Translating Dr. Shetty's 23+ years of clinical excellence into a digital narrative that matches the offline authority." },
-    { num: "03", title: "The Dual-Core Advantage", desc: "The unique value proposition: Ayurvedic foundational wisdom seamlessly integrated with 2024's most advanced Aesthetic Science." },
-    { num: "04", title: "The Corporate Opportunity", desc: "Dominating the Sakinaka Metro locale. Tailoring messaging to the high-value professionals of the Marol/MIDC hub." },
-    { num: "05", title: "The Visual Bridge", desc: "A textured white background with Lavender accents to bridge the gap between the physical clinic and the digital brand." },
-    { num: "06", title: "The Metro Recall", desc: "Rebranding the '2024' handle. Integrating the unified Clinical White, Lavender, and Gold to create undeniable 'Visual Recall' for patients walking from the metro." },
-    { num: "07", title: "Transformations over Procedures", desc: "Shifting the narrative. We no longer sell 'carbon peels'—we sell the 'Transformation Journey' led by a veteran specialist." },
-    { num: "08", title: "The High-Margin Focus", desc: "Prioritizing premium services: GFC (Growth Factor Concentrate), PRP, RF Skin Tightening, and Carbon Laser Facials." },
-    { num: "09", title: "The Trust Engine", desc: "Mobilizing our 5.0 Star legacy. Repurposing glowing Justdial and Practo reviews into high-converting visual proofs using our new palette." },
-    { num: "10", title: "The Strategic Partnership", desc: "The synergy between the 'Master Architect' (Visionary Liaison) and the 'Veteran Specialist' (Dr. Shetty)." },
+  const narrative = [
+    {
+      category: "The Paradox",
+      title: "5.0 Stars Offline, Invisible Online",
+      desc: "Chikitsaa boasts a rare 5.0-star legacy with 23+ years of expertise. Yet, your digital presence feels 'functional' rather than 'authoritative'. We are losing high-value patients to lesser-skilled clinics that simply look better online.",
+      icon: <ShieldCheck className="w-8 h-8 text-gold" />,
+      color: "bg-white",
+    },
+    {
+      category: "The Problem",
+      title: "The Saki Naka Blindspot",
+      desc: "1 Lakh+ corporate professionals cross the Saki Naka Metro daily. They are looking for 'Modern Aesthetics', but our current branding targets 'General Patients'. We need to pivot to attract the Marol/MIDC high-ticket corporate tier.",
+      icon: <Target className="w-8 h-8 text-gold" />,
+      color: "bg-lavender-light",
+    },
+    {
+      category: "The Insight",
+      title: "Complexity is Not a Feature",
+      desc: "Patients don't want a list of 50 procedures; they want a 'Transformation'. We will shift the narrative from selling 'Chemical Peels' to selling 'Clinical Artistry' led by a veteran specialist.",
+      icon: <Focus className="w-8 h-8 text-gold" />,
+      color: "bg-white",
+    },
+    {
+      category: "The Solution",
+      title: "The Digital Twin Strategy",
+      desc: "Your clinic interior is stunning—Lavender doors, Gold accents, Clinical White. We will build a 'Digital Twin' of your physical luxury. When a patient sees your profile, they should feel like they've already stepped into your reception.",
+      icon: <Building2 className="w-8 h-8 text-gold" />,
+      color: "bg-lavender-light",
+    },
+    {
+      category: "The Promise",
+      title: "From 'A Clinic' to 'The Institute'",
+      desc: "By June 2026, Chikitsaa won't just be an aesthetic clinic above a Bata showroom. It will be 'The Authority Institute for Modern Trichology & Skin'—the only logical choice for the elite of Saki Naka.",
+      icon: <Crown className="w-8 h-8 text-gold" />,
+      color: "bg-deep-purple text-white border-none",
+      textColor: "text-lavender",
+      titleColor: "text-white"
+    }
   ];
 
   return (
@@ -41,30 +69,88 @@ const DeliverableOne = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
-      className="max-w-5xl mx-auto space-y-12"
+      className="max-w-5xl mx-auto space-y-16 pb-32"
     >
-      <div className="space-y-4">
-        <h2 className="font-display text-4xl md:text-6xl text-deep-purple tracking-tight font-semibold">The Brand Pitch</h2>
-        <p className="font-accent text-gold uppercase tracking-widest text-sm font-semibold mb-8">Deliverable 01 &mdash; The Visionary Narrative</p>
+      <div className="text-center space-y-4 max-w-3xl mx-auto">
+        <motion.span 
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          className="font-accent text-gold uppercase tracking-[0.3em] text-xs font-bold"
+        >
+          Confidential Strategy Pitch
+        </motion.span>
+        <h2 className="font-display text-5xl md:text-7xl text-deep-purple tracking-tight font-semibold leading-tight">
+          Mastering the <span className="italic font-normal">Aesthetic Authority</span>
+        </h2>
+        <p className="text-gray-500 font-sans text-lg">
+          Bridging the gap between 23 years of clinical heritage and the modern luxury digital era.
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-32">
-        {slides.map((slide, idx) => (
-          <div key={idx} className="group relative bg-white p-8 rounded-2xl border border-lavender hover:border-deep-purple shadow-sm hover:shadow-xl transition-all duration-300">
-            <div className="absolute top-0 right-0 p-6 opacity-5 font-display text-6xl text-deep-purple group-hover:opacity-10 group-hover:text-gold transition-all">
-              {slide.num}
-            </div>
-            <div className="relative z-10">
-              <h3 className="font-display text-2xl text-deep-purple mb-3 group-hover:text-deep-purple-dark transition-colors duration-300">
-                {slide.title}
+      <div className="space-y-8">
+        {narrative.map((item, idx) => (
+          <motion.div 
+            key={idx}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ 
+              duration: 0.8, 
+              delay: idx * 0.1,
+              ease: [0.21, 0.47, 0.32, 0.98] 
+            }}
+            whileHover={{ y: -5, transition: { duration: 0.2 } }}
+            className={`flex flex-col md:flex-row items-center gap-8 p-10 rounded-[40px] border border-lavender shadow-sm transition-all duration-500 hover:shadow-xl ${item.color}`}
+          >
+            <motion.div 
+              initial={{ scale: 0.5, opacity: 0, rotate: -15 }}
+              whileInView={{ scale: 1, opacity: 1, rotate: 0 }}
+              viewport={{ once: true }}
+              transition={{ 
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+                delay: 0.2 + (idx * 0.1)
+              }}
+              className="bg-white p-6 rounded-3xl shadow-sm border border-lavender/50 shrink-0"
+            >
+              {item.icon}
+            </motion.div>
+            <div className="space-y-3 text-center md:text-left">
+              <span className={`font-accent text-[10px] uppercase tracking-widest font-bold ${item.textColor || 'text-gold'}`}>
+                {item.category}
+              </span>
+              <h3 className={`font-display text-3xl ${item.titleColor || 'text-deep-purple'}`}>
+                {item.title}
               </h3>
-              <p className="text-gray-600 font-sans leading-relaxed text-sm md:text-base">
-                {slide.desc}
+              <p className={`font-sans leading-relaxed text-base italic ${item.textColor || 'text-gray-600'}`}>
+                "{item.desc}"
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
+
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, type: "spring" }}
+        className="bg-gold/5 border border-gold/20 p-12 rounded-[50px] text-center space-y-6"
+      >
+        <motion.div
+           initial={{ rotate: -20, scale: 0 }}
+           whileInView={{ rotate: 0, scale: 1 }}
+           viewport={{ once: true }}
+           transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
+        >
+          <Sparkles className="w-12 h-12 text-gold mx-auto" />
+        </motion.div>
+        <h3 className="font-display text-4xl text-deep-purple italic">"The strategy isn't just to be seen; it's to be respected."</h3>
+        <p className="text-gray-500 max-w-xl mx-auto text-sm uppercase tracking-widest font-accent">
+          Prepared exclusively for Dr. Raviraj Shetty & the Chikitsaa Management Team
+        </p>
+      </motion.div>
     </motion.div>
   );
 };
@@ -106,7 +192,14 @@ const DeliverableTwo = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {pillars.map((pillar, idx) => (
-          <div key={idx} className="bg-gradient-to-b from-lavender-light to-white p-8 rounded-3xl border border-lavender relative overflow-hidden group hover:shadow-lg transition-shadow duration-500">
+          <motion.div 
+            key={idx} 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: idx * 0.15, duration: 0.5 }}
+            className="bg-gradient-to-b from-lavender-light to-white p-8 rounded-3xl border border-lavender relative overflow-hidden group hover:shadow-lg transition-shadow duration-500"
+          >
             <div className="absolute top-0 right-0 w-32 h-32 bg-lavender/30 rounded-full blur-3xl group-hover:bg-gold/10 transition-colors duration-500"></div>
             <div className="mb-6 p-4 bg-white inline-block rounded-2xl border border-lavender shadow-sm">
               {pillar.icon}
@@ -116,11 +209,17 @@ const DeliverableTwo = () => {
             <p className="text-gray-600 text-sm leading-relaxed text-justify">
               {pillar.desc}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
 
-      <div className="mt-16 bg-white rounded-3xl p-8 border border-lavender shadow-sm">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2 }}
+        className="mt-16 bg-white rounded-3xl p-8 border border-lavender shadow-sm"
+      >
         <h3 className="font-display text-3xl text-deep-purple mb-8 border-b border-lavender pb-4">Execution Matrix: High-Margin Focus</h3>
         <div className="space-y-6">
           <div className="flex flex-col md:flex-row gap-6">
@@ -147,7 +246,7 @@ const DeliverableTwo = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
@@ -166,7 +265,12 @@ const DeliverableThree = () => {
         <p className="font-accent text-gold uppercase tracking-widest text-sm font-semibold mb-8">Deliverable 03 &mdash; Protecting the Luxury Brand</p>
       </div>
 
-      <div className="bg-lavender-light rounded-3xl p-8 border border-lavender shadow-sm mb-12">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-lavender-light rounded-3xl p-8 border border-lavender shadow-sm mb-12"
+      >
         <div className="flex items-start gap-4">
           <div className="bg-white p-3 rounded-xl border border-lavender shadow-sm">
             <AlertTriangle className="w-8 h-8 text-deep-purple" />
@@ -178,9 +282,15 @@ const DeliverableThree = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="space-y-8">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 }}
+        className="space-y-8"
+      >
         <h3 className="font-accent text-sm uppercase tracking-widest text-deep-purple font-semibold border-b border-lavender pb-2">The Solution: 3 Concentrated "Master Campaigns"</h3>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -211,7 +321,7 @@ const DeliverableThree = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
@@ -240,12 +350,17 @@ const DeliverableFour = () => {
 
       <div className="bg-white rounded-3xl p-1 shadow-sm border border-lavender">
         <div className="bg-lavender-light rounded-[22px] p-6 md:p-12">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="text-center max-w-2xl mx-auto mb-12"
+          >
             <h3 className="font-display text-3xl text-deep-purple mb-4">The "Master Architect" Baseline</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
               Designed specifically to meet your budget expectations while completely outclassing standard "discount" marketing. Fix the core Agency Strategy at ₹15k, and use the slider below to model your scalable Meta Ad spend to calculate expected real-world traffic.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Box 1: Agency Retainer */}
@@ -332,7 +447,7 @@ const DeliverableFour = () => {
                   <div className="mt-4 pt-4 border-t border-lavender/10">
                     <p className="text-[11px] text-lavender font-sans leading-relaxed text-justify">
                       <span className="text-gold font-semibold uppercase tracking-wider text-[10px] block mb-1">Why ₹10,000 is the perfect start:</span>
-                      At ~₹333/day, this base budget hits the exact threshold needed for the Meta algorithm to optimize delivery across our 3 Master Campaigns. It filters out "discount-hunters," reliably generating 35+ high-intent booking inquiries without risking over-exposure or budget dilution.
+                      At ₹10,000 (~₹333/day), we focus total firepower on our <span className="text-white font-semibold underline decoration-gold/50 underline-offset-2 tracking-tight">3 Master Campaigns: Authority, Lifestyle, and Trust</span>. By concentrating spend rather than splitting it across 10+ fragmented posts, we provide Meta's algorithm with the critical daily density of data points required to exit the 'Learning Phase' quickly. This approach filters for high-intent professionals in the Saki Naka/MIDC area, ensuring the AI optimizes for <span className="text-gold">luxury conversions</span> rather than just cheap, low-quality clicks.
                     </p>
                   </div>
                 )}
@@ -351,13 +466,19 @@ const DeliverableFour = () => {
             </div>
           </div>
           
-          <div className="mt-8 text-center bg-white p-6 rounded-xl border border-lavender flex items-center justify-center gap-6 shadow-sm">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="mt-8 text-center bg-white p-6 rounded-xl border border-lavender flex items-center justify-center gap-6 shadow-sm"
+          >
              <IndianRupee className="w-10 h-10 text-gold" />
              <div className="text-left">
                 <p className="text-sm text-gray-500 uppercase tracking-widest font-accent">Total Monthly Implementation</p>
                 <p className="font-display text-3xl text-deep-purple">₹{(agencyFee + adBudget).toLocaleString()} <span className="text-sm text-gray-400 font-sans tracking-normal">(Inclusive of Agency & Platform Spend)</span></p>
              </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>
@@ -366,7 +487,7 @@ const DeliverableFour = () => {
 };
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<number>(4);
+  const [activeTab, setActiveTab] = useState<number>(1);
 
   return (
     <div className="min-h-screen bg-off-white text-deep-purple overflow-x-hidden selection:bg-lavender selection:text-deep-purple">
@@ -381,27 +502,51 @@ export default function App() {
           <div className="hidden lg:flex items-center space-x-8">
             <button 
               onClick={() => setActiveTab(1)}
-              className={`font-accent text-[11px] uppercase tracking-widest transition-all ${activeTab === 1 ? 'text-deep-purple font-semibold border-b-2 border-gold pb-1' : 'text-gray-400 hover:text-deep-purple pb-1'}`}
+              className={`relative font-accent text-[11px] uppercase tracking-widest transition-all ${activeTab === 1 ? 'text-deep-purple font-semibold' : 'text-gray-400 hover:text-deep-purple pb-1'}`}
             >
               01. The Pitch
+              {activeTab === 1 && (
+                <motion.div 
+                  layoutId="activeTab"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gold"
+                />
+              )}
             </button>
             <button 
               onClick={() => setActiveTab(2)}
-              className={`font-accent text-[11px] uppercase tracking-widest transition-all ${activeTab === 2 ? 'text-deep-purple font-semibold border-b-2 border-gold pb-1' : 'text-gray-400 hover:text-deep-purple pb-1'}`}
+              className={`relative font-accent text-[11px] uppercase tracking-widest transition-all ${activeTab === 2 ? 'text-deep-purple font-semibold' : 'text-gray-400 hover:text-deep-purple pb-1'}`}
             >
               02. 30-Day Strategy
+              {activeTab === 2 && (
+                <motion.div 
+                  layoutId="activeTab"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gold"
+                />
+              )}
             </button>
             <button 
               onClick={() => setActiveTab(3)}
-              className={`font-accent text-[11px] uppercase tracking-widest transition-all ${activeTab === 3 ? 'text-deep-purple font-semibold border-b-2 border-gold pb-1' : 'text-gray-400 hover:text-deep-purple pb-1'}`}
+              className={`relative font-accent text-[11px] uppercase tracking-widest transition-all ${activeTab === 3 ? 'text-deep-purple font-semibold' : 'text-gray-400 hover:text-deep-purple pb-1'}`}
             >
               03. The Ad Pivot
+              {activeTab === 3 && (
+                <motion.div 
+                  layoutId="activeTab"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gold"
+                />
+              )}
             </button>
             <button 
               onClick={() => setActiveTab(4)}
-              className={`font-accent text-[11px] uppercase tracking-widest transition-all ${activeTab === 4 ? 'text-deep-purple font-semibold border-b-2 border-gold pb-1' : 'text-gray-400 hover:text-deep-purple pb-1'}`}
+              className={`relative font-accent text-[11px] uppercase tracking-widest transition-all ${activeTab === 4 ? 'text-deep-purple font-semibold' : 'text-gray-400 hover:text-deep-purple pb-1'}`}
             >
               04. Investment
+              {activeTab === 4 && (
+                <motion.div 
+                  layoutId="activeTab"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gold"
+                />
+              )}
             </button>
           </div>
         </div>
@@ -417,11 +562,22 @@ export default function App() {
         </div>
 
         <div className="relative z-10">
-          <AnimatePresence mode="wait">
-            {activeTab === 1 && <DeliverableOne key="d1" />}
-            {activeTab === 2 && <DeliverableTwo key="d2" />}
-            {activeTab === 3 && <DeliverableThree key="d3" />}
-            {activeTab === 4 && <DeliverableFour key="d4" />}
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: -10, filter: "blur(10px)" }}
+              transition={{ 
+                duration: 0.4, 
+                ease: [0.23, 1, 0.32, 1] 
+              }}
+            >
+              {activeTab === 1 && <DeliverableOne />}
+              {activeTab === 2 && <DeliverableTwo />}
+              {activeTab === 3 && <DeliverableThree />}
+              {activeTab === 4 && <DeliverableFour />}
+            </motion.div>
           </AnimatePresence>
         </div>
       </main>
