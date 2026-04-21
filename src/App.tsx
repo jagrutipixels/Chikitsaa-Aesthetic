@@ -29,37 +29,30 @@ const DeliverableOne = () => {
       title: "5.0 Stars Offline, Invisible Online",
       desc: "Chikitsaa boasts a rare 5.0-star legacy with 23+ years of expertise. Yet, your digital presence feels 'functional' rather than 'authoritative'. We are losing high-value patients to lesser-skilled clinics that simply look better online.",
       icon: <ShieldCheck className="w-8 h-8 text-gold" />,
-      color: "bg-white",
     },
     {
       category: "The Problem",
       title: "The Saki Naka Blindspot",
       desc: "1 Lakh+ corporate professionals cross the Saki Naka Metro daily. They are looking for 'Modern Aesthetics', but our current branding targets 'General Patients'. We need to pivot to attract the Marol/MIDC high-ticket corporate tier.",
       icon: <Target className="w-8 h-8 text-gold" />,
-      color: "bg-lavender-light",
     },
     {
       category: "The Insight",
       title: "Complexity is Not a Feature",
       desc: "Patients don't want a list of 50 procedures; they want a 'Transformation'. We will shift the narrative from selling 'Chemical Peels' to selling 'Clinical Artistry' led by a veteran specialist.",
       icon: <Focus className="w-8 h-8 text-gold" />,
-      color: "bg-white",
     },
     {
       category: "The Solution",
       title: "The Digital Twin Strategy",
       desc: "Your clinic interior is stunning—Lavender doors, Gold accents, Clinical White. We will build a 'Digital Twin' of your physical luxury. When a patient sees your profile, they should feel like they've already stepped into your reception.",
       icon: <Building2 className="w-8 h-8 text-gold" />,
-      color: "bg-lavender-light",
     },
     {
       category: "The Promise",
       title: "From 'A Clinic' to 'The Institute'",
       desc: "By June 2026, Chikitsaa won't just be an aesthetic clinic above a Bata showroom. It will be 'The Authority Institute for Modern Trichology & Skin'—the only logical choice for the elite of Saki Naka.",
       icon: <Crown className="w-8 h-8 text-gold" />,
-      color: "bg-deep-purple text-white border-none",
-      textColor: "text-lavender",
-      titleColor: "text-white"
     }
   ];
 
@@ -100,7 +93,7 @@ const DeliverableOne = () => {
               ease: [0.21, 0.47, 0.32, 0.98] 
             }}
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            className={`flex flex-col md:flex-row items-center gap-8 p-10 rounded-[40px] border border-lavender shadow-sm transition-all duration-500 hover:shadow-xl ${item.color}`}
+            className={`group flex flex-col md:flex-row items-center gap-8 p-10 rounded-[40px] border border-lavender bg-white hover:bg-deep-purple transition-all duration-500 hover:shadow-2xl hover:border-transparent`}
           >
             <motion.div 
               initial={{ scale: 0.5, opacity: 0, rotate: -15 }}
@@ -112,18 +105,18 @@ const DeliverableOne = () => {
                 damping: 20,
                 delay: 0.2 + (idx * 0.1)
               }}
-              className="bg-white p-6 rounded-3xl shadow-sm border border-lavender/50 shrink-0"
+              className="bg-white p-6 rounded-3xl shadow-sm border border-lavender/50 shrink-0 group-hover:scale-110 transition-transform duration-500"
             >
               {item.icon}
             </motion.div>
-            <div className="space-y-3 text-center md:text-left">
-              <span className={`font-accent text-[10px] uppercase tracking-widest font-bold ${item.textColor || 'text-gold'}`}>
+            <div className="space-y-3 text-center md:text-left transition-colors duration-500">
+              <span className="font-accent text-[10px] uppercase tracking-widest font-bold text-gold group-hover:text-lavender">
                 {item.category}
               </span>
-              <h3 className={`font-display text-3xl ${item.titleColor || 'text-deep-purple'}`}>
+              <h3 className="font-display text-3xl text-deep-purple group-hover:text-white">
                 {item.title}
               </h3>
-              <p className={`font-sans leading-relaxed text-base italic ${item.textColor || 'text-gray-600'}`}>
+              <p className="font-sans leading-relaxed text-base italic text-gray-600 group-hover:text-lavender/80">
                 "{item.desc}"
               </p>
             </div>
