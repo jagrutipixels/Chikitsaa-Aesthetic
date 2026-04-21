@@ -48,7 +48,7 @@ const DeliverableOne = () => {
         <p className="font-accent text-gold uppercase tracking-widest text-sm font-semibold mb-8">Deliverable 01 &mdash; The Visionary Narrative</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-32">
         {slides.map((slide, idx) => (
           <div key={idx} className="group relative bg-white p-8 rounded-2xl border border-lavender hover:border-deep-purple shadow-sm hover:shadow-xl transition-all duration-300">
             <div className="absolute top-0 right-0 p-6 opacity-5 font-display text-6xl text-deep-purple group-hover:opacity-10 group-hover:text-gold transition-all">
@@ -239,7 +239,7 @@ const DeliverableFour = () => {
       </div>
 
       <div className="bg-white rounded-3xl p-1 shadow-sm border border-lavender">
-        <div className="bg-lavender-light rounded-[22px] p-8 md:p-12">
+        <div className="bg-lavender-light rounded-[22px] p-6 md:p-12">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h3 className="font-display text-3xl text-deep-purple mb-4">The "Master Architect" Baseline</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
@@ -264,15 +264,15 @@ const DeliverableFour = () => {
               <ul className="space-y-4 flex-grow">
                 <li className="flex items-start">
                   <CheckCircle2 className="w-5 h-5 mr-3 shrink-0 text-gold" />
-                  <span className="text-sm text-gray-700">Dedicated Base Requirement: <strong className="text-deep-purple">1 Full Shoot Day</strong> (3-4 hrs mapping content).</span>
+                  <span className="text-sm text-gray-700"><strong className="text-deep-purple">1 Dedicated Shoot Day </strong> (3-4 hours batch-filming right at the clinic).</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="w-5 h-5 mr-3 shrink-0 text-gold" />
-                  <span className="text-sm text-gray-700">Production of <strong className="text-deep-purple">4 Cinematic 'Doc-Talk' Reels</strong> based on the 3 Master Campaigns.</span>
+                  <span className="text-sm text-gray-700">Production of <strong className="text-deep-purple">4 Cinematic 'Doc-Talk' Reels</strong> based on the Master Campaigns.</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="w-5 h-5 mr-3 shrink-0 text-gold" />
-                  <span className="text-sm text-gray-700">Design of <strong className="text-deep-purple">4 High-End Grid Carousels</strong> (Clinical White/Lavender UI standard).</span>
+                  <span className="text-sm text-gray-700">Design of <strong className="text-deep-purple">4 High-End Grid Carousels</strong> (Clinical White/Lavender UI).</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="w-5 h-5 mr-3 shrink-0 text-gold" />
@@ -327,6 +327,15 @@ const DeliverableFour = () => {
                     <p className="text-[10px] text-gold-muted mt-1 uppercase tracking-wider">Leads</p>
                   </div>
                 </div>
+
+                {adBudget === 10000 && (
+                  <div className="mt-4 pt-4 border-t border-lavender/10">
+                    <p className="text-[11px] text-lavender font-sans leading-relaxed text-justify">
+                      <span className="text-gold font-semibold uppercase tracking-wider text-[10px] block mb-1">Why ₹10,000 is the perfect start:</span>
+                      At ~₹333/day, this base budget hits the exact threshold needed for the Meta algorithm to optimize delivery across our 3 Master Campaigns. It filters out "discount-hunters," reliably generating 35+ high-intent booking inquiries without risking over-exposure or budget dilution.
+                    </p>
+                  </div>
+                )}
               </div>
 
               <ul className="space-y-3 mt-auto">
@@ -399,7 +408,7 @@ export default function App() {
       </header>
 
       {/* Main Content Area */}
-      <main className="pt-32 px-6 sm:px-12 max-w-7xl mx-auto relative min-h-screen">
+      <main className="pt-28 px-4 sm:px-12 max-w-7xl mx-auto relative min-h-screen pb-32 lg:pb-0">
         {/* Decorative Grid Lines - Soft Clinic Feel */}
         <div className="fixed inset-0 pointer-events-none opacity-20 flex justify-center space-x-[25%] z-0">
           <div className="w-px h-full bg-lavender/50"></div>
@@ -418,7 +427,7 @@ export default function App() {
       </main>
 
       {/* Mobile Navigation */}
-      <div className="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-white rounded-full px-6 py-4 shadow-xl border border-lavender flex items-center space-x-6 w-max">
+      <div className="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-white/95 backdrop-blur-md rounded-full px-4 py-3 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] border border-lavender flex items-center justify-between w-[90%] max-w-[340px]">
         <button onClick={() => setActiveTab(1)} className={`p-2 transition-colors ${activeTab === 1 ? 'text-deep-purple bg-lavender-light rounded-full' : 'text-gray-400'}`} aria-label="Pitch">
           <Building2 className="w-5 h-5" />
         </button>
